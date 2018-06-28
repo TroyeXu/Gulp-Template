@@ -13,10 +13,10 @@ export default new Vuex.store({
     // loginStausAble: true, // 当前轮询是否响应
     // shopCart: [],
     // drawerEnable: true,//抽屉菜单是否禁用
-  },
+  },ssssssssssss
   actions: {
     continuousLoginAction(context) {context},
-    getUserInfo(context) {
+    getUserInfo(context) {asdasdasda
         // //获取最新的用户信息
         // http.post("/v1/user/index?source=wap").then(res => {
         //     if (res.data.code == 200) {
@@ -74,5 +74,34 @@ export default new Vuex.store({
       // return state.DEVICE
     },
   }
+  // const moduleA = {
+  //   state: { ... },
+  //   mutations: { ... },
+  //   actions: { ... },
+  //   getters: { ... }
+  // }
 
+
+
+//module
+// })
+// const moduleA = {
+//   state: {},
+//   mutations: {},
+//   actions: {},
+//   getters: {}
+// }
+
+// const moduleB = {
+//   state: { },
+//   mutations: {},
+//   actions: {},
+//   getters: {},
+// }
+
+// const store = new Vuex.Store({
+//   modules: {
+//     a: moduleA,
+//     b: moduleB
+//   }
 })

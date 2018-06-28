@@ -1,0 +1,62 @@
+//class
+html,body
+  height: 100%
+  margin: 0
+  padding:0
+  font-family: 'Roboto',sans-serif
+*
+  vertical-align: middle
+  outline: none
+
+//顏色定義
+$color_blue: #282f44
+$color_brown: #e6af2e
+$color_yellow: #f5d061
+$color_white: #ececec
+//
+@mixin size($w,$h:$w)
+  width: $w
+  height: $h
+
+
+// 排版
+@mixin ab_center
+  position: absolute
+  left: 50%
+  top: 50%
+  transform: translate(-50%,-50%)
+
+@mixin remg_center
+  position: relative
+  top: 50%
+  margin: 0 auto
+  transform: translateY(-50%)
+
+@mixin flexCenter
+  display: flex
+  justify-content: center
+  align-items: center
+@mixin fixedPos($l,$t)
+  position: fixed
+  left: $l
+  top: $t
+@mixin d-flex
+  display: flex
+
+//細微
+@mixin bxshadow
+  box-shadow: 0px 5px 25px 5px rgba(0,0,0,0.25)
+@mixin bg-cover
+  background-size: cover
+@mixin bg-contain
+  background-size: contain
+@mixin p-relative
+  position: relative
+@mixin p-absolute
+  position: absolute
+@mixin p-fixed
+  position: fixed
+
+//calc
+@mixin setLeftPos($l,$w:$cardWidh)
+  left: calc(#{$l} - #{$w/2})
