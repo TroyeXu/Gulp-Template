@@ -1,7 +1,5 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <img src="./assets/logo.png" alt="">
     <h3>一般路由</h3>
     <router-link to="/">首頁</router-link>
     <h3>子路由</h3>
@@ -30,13 +28,5 @@
   };
 </script>
 
-<style>
-  #app {
-    font-family: "Avenir", Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
-  }
-</style>
+<style lang="sass" src="./assets/sass/themes/taiwan.sass"></style>
+

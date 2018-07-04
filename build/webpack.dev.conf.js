@@ -1,3 +1,10 @@
+/**
+将hot-reload相关的代码添加到entry chunks
+合并基础的webpack配置
+使用styleLoaders
+配置Source Maps
+配置webpack插件
+ */
 'use strict'
 const utils = require('./utils')
 const webpack = require('webpack')
@@ -15,9 +22,11 @@ const PORT = process.env.PORT && Number(process.env.PORT)
 
 const devWebpackConfig = merge(baseWebpackConfig, {
   module: {
+    // 在开发环境下生成cssSourceMap，便于调试（但是官方说cssSourceMap的相对路径有一个bug，所以暂时将其关闭了）
     rules: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap, usePostCSS: true })
   },
   // cheap-module-eval-source-map is faster for development
+  // 配置Source Maps 在开发中使用cheap-module-eval-source-map更快
   devtool: config.dev.devtool,
 
   // these devServer options should be customized in /config/index.js
@@ -45,11 +54,14 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     }
   },
   plugins: [
+    // DefinePlugin可以为webpack提供一个在编译时可以配置的全局常量
+    // 在这里我们可以通过"process.env"这个全局变量的值来判定所处的环境
     new webpack.DefinePlugin({
       'process.env': require('../config/dev.env')
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
+    // 页面中的报错不会阻塞编译，但是会在编译结束后报错
     new webpack.NoEmitOnErrorsPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
@@ -78,7 +90,6 @@ module.exports = new Promise((resolve, reject) => {
       process.env.PORT = port
       // add port to devServer config
       devWebpackConfig.devServer.port = port
-
       // Add FriendlyErrorsPlugin
       devWebpackConfig.plugins.push(new FriendlyErrorsPlugin({
         compilationSuccessInfo: {

@@ -30,30 +30,22 @@
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-  h1,
-  ddd,
-  dsaa,
-  d,
-  adas,
-  ds,
-  a,
-  h2 {
-    font-weight: normal;
-  }
 
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
 
-  li {
-    display: inline-block;
-    margin: 0 10px;
-  }
-
-  a {
-    color: #42b983;
-  }
-
+<style lang="scss" rel="stylesheet/scss">
+  #indexContent {
+    .tab{
+        display: flex;
+        width:100%;
+        height: 40px;
+        line-height: 40px;
+        .tab-item {
+            flex: 1;
+            text-align: center;
+            a{
+                display:block;
+            }
+        }
+    }
+}
 </style>
