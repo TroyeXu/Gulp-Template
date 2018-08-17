@@ -28,5 +28,14 @@
   };
 </script>
 
-<style lang="sass" src="./assets/sass/themes/taiwan.sass"></style>
+<style lang="scss">
+#app{
+  color: red;
+  a{
+    background-color: #fff;
+  }
+}
+
+
+</style>
 
